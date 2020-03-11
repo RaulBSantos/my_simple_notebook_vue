@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     createNewNote() {
-      this.notes.push({ title: '', text: '' });
+      this.notes.push({ header: 'Title', text: '' });
     }
   }
 };

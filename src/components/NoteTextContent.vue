@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-card :header="title">
-      <b-card-text>{{ text }}</b-card-text>
+    <b-card contenteditable :header="header">
+      <b-card-text contenteditable>{{ text }}</b-card-text>
     </b-card>
   </div>
 </template>
@@ -9,9 +9,9 @@
 export default {
   name: 'NoteTextContent',
   props: {
-    title: {
+    header: {
       type: String,
-      required: true
+      required: false
     },
     text: {
       type: String,

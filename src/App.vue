@@ -1,19 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NoteList :notes="notes" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NoteList from './components/NoteList';
+
+const notes = [
+  { id: 1, title: 'Titulo 1', text: 'Texto 1' },
+  { id: 2, title: 'Título 2', text: 'Texto 2' }
+];
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NoteList
+  },
+  data: function() {
+    return { notes: notes };
   }
-}
+};
 </script>
 
 <style>

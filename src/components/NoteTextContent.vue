@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card contenteditable :header="header">
+    <b-card contenteditable :header="readableDate">
       <b-card-text
         ><b-form-textarea
           :disabled="state !== 'editing'"
@@ -17,7 +17,7 @@
 export default {
   name: 'NoteTextContent',
   props: {
-    header: {
+    createdDate: {
       type: String,
       required: false
     },
@@ -28,6 +28,13 @@ export default {
     text: {
       type: String,
       required: false
+    }
+  },
+  computed: {
+    readableDate() {
+      const date = new Date(this.createdDate).toLocaleDateString();
+      const time = new Date(this.createdDate).toLocaleTimeString();
+      return 'Criada em: ' + date + ' - ' + time;
     }
   },
   methods: {

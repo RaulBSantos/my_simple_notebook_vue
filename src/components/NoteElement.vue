@@ -5,7 +5,7 @@
         <b-col cols="10"
           ><NoteTextContent
             :state="state"
-            :header="note.header"
+            :createdDate="note.createdDate"
             :text="note.text"
             @edit-text-note="onEditNote"
         /></b-col>

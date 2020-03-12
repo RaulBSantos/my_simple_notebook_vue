@@ -32,7 +32,6 @@ export default {
       const createdDate = new Date().toISOString();
       this.notes.unshift({
         createdDate: createdDate,
-        header: 'Title',
         text: ''
       });
       this.saveNotes();

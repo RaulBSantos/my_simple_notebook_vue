@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-card contenteditable :header="readableDate">
+    <b-card contenteditable :header="readableCreatedTime">
       <b-card-text
         ><b-form-textarea
           :disabled="state !== 'editing'"
@@ -31,10 +31,14 @@ export default {
     }
   },
   computed: {
-    readableDate() {
-      const date = new Date(this.createdDate).toLocaleDateString();
-      const time = new Date(this.createdDate).toLocaleTimeString();
-      return 'Criada em: ' + date + ' - ' + time;
+    readableCreatedTime() {
+      const createdDateTime = new Date(this.createdDate);
+      return (
+        'Criada em: ' +
+        createdDateTime.toLocaleDateString() +
+        ' - ' +
+        createdDateTime.toLocaleTimeString()
+      );
     }
   },
   methods: {

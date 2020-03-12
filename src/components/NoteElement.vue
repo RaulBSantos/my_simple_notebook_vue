@@ -9,7 +9,10 @@
           <b-btn-group vertical="true">
             <b-button variant="transparent"><b-icon icon="pencil"/></b-button>
             <b-button variant="transparent"
-              ><b-icon icon="trash" variant="danger" @click="deleteNote"
+              ><b-icon
+                icon="trash"
+                variant="danger"
+                @click="emitDelete(note.id)"
             /></b-button>
           </b-btn-group>
         </b-col>
@@ -29,12 +32,9 @@ export default {
     note: Object
   },
   methods: {
-    deleteNote() {
-      this.$destroy();
+    emitDelete(id) {
+      this.$emit('delete-note', id);
     }
-  },
-  beforeDestroy() {
-    this.$el.parentNode.removeChild(this.$el);
   }
 };
 </script>

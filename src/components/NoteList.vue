@@ -2,7 +2,12 @@
   <div>
     <b-container>
       <b-button variant="info" @click="createNewNote"><b-icon-plus /></b-button>
-      <NoteElement v-for="note in notes" :note="note" :key="note.id" />
+      <NoteElement
+        v-for="note in notes"
+        :note="note"
+        :key="note.id"
+        @delete-note="deleteNote"
+      />
     </b-container>
   </div>
 </template>
@@ -19,7 +24,11 @@ export default {
   },
   methods: {
     createNewNote() {
-      this.notes.push({ header: 'Title', text: '' });
+      this.notes.unshift({ header: 'Title', text: '' });
+    },
+    deleteNote(id) {
+      const idx = this.notes.findIndex(el => el.id === id);
+      this.notes.splice(idx, 1);
     }
   }
 };

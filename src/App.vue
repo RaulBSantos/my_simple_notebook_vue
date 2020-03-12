@@ -17,8 +17,11 @@ export default {
   components: {
     NoteList
   },
-  data: function() {
-    return { notes: notes };
+  data() {
+    return { notes: [] };
+  },
+  created() {
+    this.notes = notes;
   }
 };
 </script>

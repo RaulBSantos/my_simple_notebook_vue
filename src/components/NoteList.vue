@@ -7,6 +7,7 @@
         :note="note"
         :key="note.id"
         @delete-note="deleteNote"
+        @update-note="updateNote"
       />
     </b-container>
   </div>
@@ -24,11 +25,22 @@ export default {
   },
   methods: {
     createNewNote() {
-      this.notes.unshift({ header: 'Title', text: '' });
+      const createdDate = new Date().toISOString();
+      this.notes.unshift({
+        createdDate: createdDate,
+        header: 'Title',
+        text: ''
+      });
     },
-    deleteNote(id) {
-      const idx = this.notes.findIndex(el => el.id === id);
+    deleteNote(createdDate) {
+      const idx = this.notes.findIndex(el => el.createdDate === createdDate);
       this.notes.splice(idx, 1);
+    },
+    updateNote(note) {
+      const idx = this.notes.findIndex(
+        el => el.createdDate === note.createdDate
+      );
+      this.notes[idx] = note;
     }
   }
 };

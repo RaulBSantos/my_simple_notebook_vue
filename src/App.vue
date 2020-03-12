@@ -8,8 +8,11 @@
 import NoteList from './components/NoteList';
 
 const notes = [
-  { id: 1, header: 'Titulo 1', text: 'Texto 1' },
-  { id: 2, header: 'Título 2', text: 'Texto 2' }
+  {
+    createdDate: new Date().toISOString(),
+    header: 'Titulo 1',
+    text: 'Texto 1'
+  }
 ];
 
 export default {

@@ -1,7 +1,14 @@
 <template>
   <div>
     <b-card contenteditable :header="header">
-      <b-card-text contenteditable>{{ text }}</b-card-text>
+      <b-card-text
+        ><b-form-textarea
+          :disabled="state !== 'editing'"
+          placeholder="Insert your note here..."
+          @blur="afterEditText"
+        >
+        </b-form-textarea
+      ></b-card-text>
     </b-card>
   </div>
 </template>
@@ -13,9 +20,14 @@ export default {
       type: String,
       required: false
     },
-    text: {
+    state: {
       type: String,
       required: false
+    }
+  },
+  methods: {
+    afterEditText(element) {
+      this.$emit('edit-text-note', element.target.value);
     }
   }
 };

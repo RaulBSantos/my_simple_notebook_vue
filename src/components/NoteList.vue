@@ -24,6 +24,10 @@ export default {
     notes: Array
   },
   methods: {
+    saveNotes() {
+      const parsedNotes = JSON.stringify(this.notes);
+      localStorage.setItem('notes', parsedNotes);
+    },
     createNewNote() {
       const createdDate = new Date().toISOString();
       this.notes.unshift({
@@ -31,16 +35,19 @@ export default {
         header: 'Title',
         text: ''
       });
+      this.saveNotes();
     },
     deleteNote(createdDate) {
       const idx = this.notes.findIndex(el => el.createdDate === createdDate);
       this.notes.splice(idx, 1);
+      this.saveNotes();
     },
     updateNote(note) {
       const idx = this.notes.findIndex(
         el => el.createdDate === note.createdDate
       );
       this.notes[idx] = note;
+      this.saveNotes();
     }
   }
 };

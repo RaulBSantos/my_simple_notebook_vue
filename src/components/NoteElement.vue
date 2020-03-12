@@ -36,7 +36,10 @@ export default {
   },
   props: {
     note: Object,
-    state: String
+    state: {
+      type: String,
+      default: 'saved'
+    }
   },
   methods: {
     emitDelete(id) {

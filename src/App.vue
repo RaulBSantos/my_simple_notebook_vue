@@ -7,14 +7,6 @@
 <script>
 import NoteList from './components/NoteList';
 
-const notes = [
-  {
-    createdDate: new Date().toISOString(),
-    header: 'Titulo 1',
-    text: 'Texto 1'
-  }
-];
-
 export default {
   name: 'App',
   components: {
@@ -23,8 +15,14 @@ export default {
   data() {
     return { notes: [] };
   },
-  created() {
-    this.notes = notes;
+  mounted() {
+    if (localStorage.getItem('notes')) {
+      try {
+        this.notes = JSON.parse(localStorage.getItem('notes'));
+      } catch (e) {
+        localStorage.removeItem('notes');
+      }
+    }
   }
 };
 </script>

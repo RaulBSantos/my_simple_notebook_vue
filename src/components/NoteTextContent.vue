@@ -6,6 +6,7 @@
           :disabled="state !== 'editing'"
           placeholder="Insert your note here..."
           @blur="afterEditText"
+          v-model="text"
         >
         </b-form-textarea
       ></b-card-text>
@@ -21,6 +22,10 @@ export default {
       required: false
     },
     state: {
+      type: String,
+      required: false
+    },
+    text: {
       type: String,
       required: false
     }

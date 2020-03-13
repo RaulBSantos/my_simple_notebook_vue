@@ -65,7 +65,7 @@ export default {
     readableCreatedTime() {
       const createdDateTime = new Date(this.createdDate);
       return (
-        'Criada em: ' +
+        'Created: ' +
         createdDateTime.toLocaleDateString() +
         ' - ' +
         createdDateTime.toLocaleTimeString()

@@ -1,4 +1,6 @@
-# notes
+# My Simple Notebook
+
+[Demo](https://my-simple-notebook-vue.herokuapp.com/)
 
 1. Notes App
    Tier: 1 — Beginner

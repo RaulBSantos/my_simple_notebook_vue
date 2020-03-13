@@ -1,13 +1,37 @@
 <template>
   <div>
-    <b-card contenteditable :header="readableCreatedTime">
+    <b-card bg-variant="light">
+      <b-card-text
+        >{{ readableCreatedTime
+        }}<b-iconstack
+          v-if="state === 'saved'"
+          font-scale="2"
+          class="mr-auto p-3"
+          shift-v="4"
+        >
+          <b-icon stacked icon="check" scale="0.5" variant="success"></b-icon>
+
+          <b-icon stacked icon="circle" variant="success"></b-icon>
+        </b-iconstack>
+        <b-iconstack v-else font-scale="2" shift-v="4" class="mr-auto p-3">
+          <b-icon
+            stacked
+            icon="alert-circle"
+            scale="1"
+            variant="danger"
+          ></b-icon>
+        </b-iconstack>
+      </b-card-text>
+    </b-card>
+    <b-card>
       <b-card-text>
         <b-form-textarea
           v-if="state === 'editing'"
-          markdown-edit
+          autofocus
           placeholder="Insert your note here..."
           @blur="afterEditText"
           v-model="text"
+          max-rows="6"
         >
         </b-form-textarea>
         <pre v-else v-html="markedDownText"></pre>

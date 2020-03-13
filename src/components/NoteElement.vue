@@ -11,15 +11,18 @@
         /></b-col>
         <b-col cols="2">
           <b-btn-group vertical="true">
-            <b-button variant="transparent"
-              ><b-icon :icon="editingIcon" @click="changeState"
-            /></b-button>
-            <b-button variant="transparent"
-              ><b-icon
-                icon="trash"
-                variant="danger"
-                @click="emitDelete(note.id)"
-            /></b-button>
+            <b-button variant="transparent">
+              <b-iconstack @click="setEditing">
+                <b-icon stacked icon="circle-fill" scale="2" variant="info" />
+                <b-icon stacked :icon="editingIcon" variant="white" />
+              </b-iconstack>
+            </b-button>
+            <b-button variant="transparent">
+              <b-iconstack @click="emitDelete(note.id)">
+                <b-icon stacked icon="circle-fill" scale="2" variant="danger" />
+                <b-icon stacked icon="trash" variant="white" />
+              </b-iconstack>
+            </b-button>
           </b-btn-group>
         </b-col>
       </b-row>
@@ -42,21 +45,16 @@ export default {
     }
   },
   methods: {
+    setEditing() {
+      this.state = 'editing';
+    },
     emitDelete(id) {
       this.$emit('delete-note', id);
     },
     onEditNote(textValue) {
       this.note.text = textValue;
       this.$emit('update-note', this.note);
-    },
-    changeState() {
-      if (this.state === 'saved') {
-        this.state = 'editing';
-        this.editingIcon = 'alert-triangle';
-      } else {
-        this.state = 'saved';
-        this.editingIcon = 'pencil';
-      }
+      this.state = 'saved';
     }
   },
   data: function() {

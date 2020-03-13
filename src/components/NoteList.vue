@@ -1,7 +1,13 @@
 <template>
   <div>
     <b-container>
-      <b-button variant="info" @click="createNewNote"><b-icon-plus /></b-button>
+      <b-iconstack scale="4" @click="createNewNote">
+        <b-icon stacked icon="circle-fill" variant="info"></b-icon>
+        <b-icon stacked icon="plus" variant="white"></b-icon>
+      </b-iconstack>
+      <br />
+      <br />
+      <hr />
       <NoteElement
         v-for="note in notes"
         :note="note"

@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <Header />
     <NoteList :notes="notes" />
   </div>
 </template>
 
 <script>
 import NoteList from './components/NoteList';
+import Header from './components/core/Header';
 
 export default {
   name: 'App',
   components: {
+    Header,
     NoteList
   },
   data() {

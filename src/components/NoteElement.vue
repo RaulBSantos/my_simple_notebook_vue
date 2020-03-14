@@ -2,13 +2,15 @@
   <div>
     <b-card>
       <b-row class="text-center">
-        <b-col cols="10"
-          ><NoteTextContent
+        <b-col cols="10">
+          <NoteTextContent
             :state="state"
             :createdDate="note.createdDate"
+            :isNew="note.isNew"
             :text="note.text"
             @edit-text-note="onEditNote"
-        /></b-col>
+          />
+        </b-col>
         <b-col cols="2">
           <b-btn-group vertical="true">
             <b-button variant="transparent">
@@ -47,6 +49,7 @@ export default {
   methods: {
     setEditing() {
       this.state = 'editing';
+      this.note.isNew = false;
     },
     emitDelete(id) {
       this.$emit('delete-note', id);

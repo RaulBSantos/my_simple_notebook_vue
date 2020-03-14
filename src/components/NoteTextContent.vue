@@ -1,9 +1,9 @@
 <template>
   <div>
     <b-card bg-variant="light">
-      <b-card-text
-        >{{ readableCreatedTime
-        }}<b-iconstack
+      <b-card-text>
+        {{ readableCreatedTime }}
+        <b-iconstack
           v-if="state === 'saved'"
           font-scale="2"
           class="mr-auto p-3"
@@ -32,8 +32,7 @@
           @blur="afterEditText"
           v-model="text"
           max-rows="6"
-        >
-        </b-form-textarea>
+        ></b-form-textarea>
         <pre v-else v-html="markedDownText"></pre>
       </b-card-text>
     </b-card>
@@ -56,6 +55,15 @@ export default {
     text: {
       type: String,
       required: false
+    },
+    isNew: {
+      type: Boolean,
+      required: false
+    }
+  },
+  mounted() {
+    if (this.isNew) {
+      this.$parent.setEditing();
     }
   },
   computed: {

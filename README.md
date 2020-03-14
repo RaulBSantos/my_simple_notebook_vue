@@ -2,7 +2,7 @@
 
 [Demo](https://my-simple-notebook-vue.herokuapp.com/)
 
-![A print from the app main screen](https://lh3.googleusercontent.com/_-lNVnVWV4OvP8U_rth4iKxI5gXuuYwtyGBGMsnK3B0LlHqGJ59FeqOq_E-GhlnGYPTcfFh2iTTAORzaEHRKIEDFGjBSg0M4AKE1gJ7-riOfm7fionS9rQXa4SQTnd7-tzt1yXaElH8efRa366X_iiI_VvBtGKQcwJJyCnIxWebFYAHkpsnnYoVOVS8iQq0gG59bl-qjg0Kg5Xjq2vIRucFLNWoqCRZZGCvA_dnJbEhJNgcAzmkt8J7SUCNS7Gf5nqyqB4Tu4EJjiXKeymarNmv007Fz4kvPGC1Et72MVXAUQkMha0s598-iw7_ozGD8GhFKFqRwtBIsqO-GOGIeUfwWGhwFKBJSODmQ825qdtjUiEHDAfHu12kjxWoKrrYQhkyJevryrBgvYihUohzTYZhsn500qcJzq0ecgUkXYQ5mXs7NSLMF8Fal5VYH6TG2FjwDA0TiK-kFUv5o4Kj7YgrLRGMG7lkRKfTg8CVmiJvVEllNn6WM9t6UMih0Iw0WIhsZHQll81lwVhpaaJ0N3kYYlH0B8flZSdj5q-tD0DhwyIN-FO1pWrx9gsAk857x0kg67cvrxqqyGlKsyFPgHLTnJ84YW2lZKV5l9bqfuJixdtlq39Xab72zCFoyrhxmCH4WtJueQXbVkFnw37tLhmdFfP0PLmOivh3C3J-U2pyrE-DvR-wf5w=w1366-h768-no)
+![A print from the app main screen](https://github.com/RaulBSantos/my_simple_notebook_vue/blob/master/My%20Simple%20Notebook%20Print%20Screen.png)
 
 More app ideas to develop [here](https://www.freecodecamp.org/news/here-are-some-app-ideas-you-can-build-to-level-up-your-coding-skills-39618291f672/amp/).
 

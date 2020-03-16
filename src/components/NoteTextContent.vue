@@ -33,14 +33,12 @@
           v-model="text"
           max-rows="6"
         ></b-form-textarea>
-        <pre v-else v-html="markedDownText"></pre>
+        <vue-markdown v-else :source="text"></vue-markdown>
       </b-card-text>
     </b-card>
   </div>
 </template>
 <script>
-const marked = require('marked');
-
 export default {
   name: 'NoteTextContent',
   props: {
@@ -67,9 +65,6 @@ export default {
     }
   },
   computed: {
-    markedDownText() {
-      return marked(this.text, { sanitize: true });
-    },
     readableCreatedTime() {
       const createdDateTime = new Date(this.createdDate);
       return (

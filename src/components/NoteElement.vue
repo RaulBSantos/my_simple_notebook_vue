@@ -8,13 +8,14 @@
             :createdDate="note.createdDate"
             :isNew="note.isNew"
             :text="note.text"
-            @edit-text-note="onEditNote"
+            @before-edit-text-note="beforeEditNote"
+            @after-edit-text-note="afterEditNote"
           />
         </b-col>
         <b-col cols="2">
           <b-btn-group vertical="true">
             <b-button variant="transparent">
-              <b-iconstack @click="setEditing">
+              <b-iconstack @click="beforeEditNote">
                 <b-icon stacked icon="circle-fill" scale="2" variant="info" />
                 <b-icon stacked :icon="editingIcon" variant="white" />
               </b-iconstack>
@@ -47,14 +48,14 @@ export default {
     }
   },
   methods: {
-    setEditing() {
+    beforeEditNote() {
       this.state = 'editing';
       this.note.isNew = false;
     },
     emitDelete(id) {
       this.$emit('delete-note', id);
     },
-    onEditNote(textValue) {
+    afterEditNote(textValue) {
       this.note.text = textValue;
       this.$emit('update-note', this.note);
       this.state = 'saved';

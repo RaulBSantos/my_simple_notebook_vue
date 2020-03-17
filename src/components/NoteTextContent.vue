@@ -61,7 +61,7 @@ export default {
   },
   mounted() {
     if (this.isNew) {
-      this.$parent.setEditing();
+      this.$emit('before-edit-text-note');
     }
   },
   computed: {
@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     afterEditText(element) {
-      this.$emit('edit-text-note', element.target.value);
+      this.$emit('after-edit-text-note', element.target.value);
     }
   }
 };

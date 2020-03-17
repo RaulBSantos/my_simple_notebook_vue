@@ -30,6 +30,7 @@
           autofocus
           placeholder="Insert your note here..."
           @blur="afterEditText"
+          @keyup.ctrl.enter="afterEditText"
           v-model="text"
           max-rows="6"
         ></b-form-textarea>

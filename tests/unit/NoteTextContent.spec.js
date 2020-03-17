@@ -32,4 +32,18 @@ describe('NoteTextContent.vue', () => {
     expect(wrapper.text()).not.toContain(textWithMarkdown);
     expect(wrapper.html()).toContain(textAndTagExpected);
   });
+
+  it('should call `afterEditText` when focus out', () => {
+    const spy = jest.spyOn(NoteTextContent.methods, 'afterEditText');
+    const wrapper = mount(NoteTextContent, {
+      localVue,
+      propsData: {
+        isNew: true,
+        state: 'editing'
+      }
+    });
+    expect(wrapper.find('textarea').exists()).toBeTruthy();
+    wrapper.find('textarea').trigger('blur');
+    expect(spy).toHaveBeenCalled();
+  });
 });

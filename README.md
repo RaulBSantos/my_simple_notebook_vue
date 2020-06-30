@@ -1,6 +1,6 @@
 # My Simple Notebook
 
-[Demo](https://my-simple-notebook-vue.herokuapp.com/)
+Live demo [here](https://my-simple-notebook-vue.herokuapp.com/)
 
 ![A print from the app main screen](https://github.com/RaulBSantos/my_simple_notebook_vue/blob/master/My%20Simple%20Notebook%20Print%20Screen.png)
 
@@ -24,7 +24,7 @@ Create and store your notes for a later purpose!
 ### Bonus features
 
 - User can create and edit a note in Markdown format. On save it will convert Markdown to HTML
-- User can see the date when he created the note
+- User can see the date when created the note
 
 ### Useful links and resources:
 
